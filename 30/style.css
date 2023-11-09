@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;  
+}
+body{
+    background-image: url("fundo.jpg");
+}
+#palco{
+    display: flex;
+    justify-content: center;
+    height: 20vh;
+}
+#foto{
+    width: 1200px;
+}
+input[type=button]{
+
+    width: 60px;
+    height: 40px;
+    background-color: lightgray;
+    font-size: 20px;
+    
+}
+input[type=button]:hover{
+    background-color: rgb(177, 175, 175);
+}

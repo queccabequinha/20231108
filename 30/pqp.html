@@ -1,0 +1,93 @@
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+<script language="javascript">
+    
+
+    function clicou(b, a) {
+
+        
+        if (p[b][a] == 1)
+            alert("Lugar já ocupado");
+        else {
+            p[b][a] = 1;
+            document.getElementById("led" + b + a).setAttribute("src", "ocu.jpg");
+       }
+    }
+
+    function tot() {
+
+        var a, b, t, v;
+
+        t = 0;
+
+
+        for (a = 0; a < 15; a++)
+        {
+           for (b = 0; b < 40; b++)
+           {
+              if (p[a][b]==1)
+              {
+                if (a<=4) 
+                      v=50;
+                   else
+                    if (a<=9)
+                        v=40;
+                    else
+                        v=30;
+
+                if (b>=10 && b<=30)
+                    v = v * 1.1;
+
+                t = t + v;
+
+              }    
+           }
+        }
+        
+        alert(t);
+    }
+    
+
+</script>
+</head>
+<body>
+    <div id="palco"><img src="palco.jpg" id="foto"></div>
+    <div class="container">
+<form>
+<script language="javascript">
+    var p, i, c;
+    p = new Array(15);
+    for(i=0; i<15; ++i)
+    {
+        p[i] = new Array(40);
+    }
+
+    for(i=0; i<15; ++i)
+    {
+        for(c = 0; c<40; ++c)
+        {
+            p[i][c] = 0;
+        }
+    }
+
+
+    document.write("<table border='1'>");
+    for (i = 1; i <= 15; ++i) {
+        document.write("<tr>");
+        for (c = 0; c < 40; c++) {
+        
+        document.write("<td><img width='30' height='50' src='des.jpg' id='led" + i + c + "' onclick='clicou(" + i + ","+ c+ ")'><br></td>");
+
+        }
+        document.write("</tr>");
+    }
+    document.write("</table>");
+
+</script>
+<br>
+<input type="button" value="Total" onclick="tot()" />
+</form>
+</div>
+</body>
+</html>
